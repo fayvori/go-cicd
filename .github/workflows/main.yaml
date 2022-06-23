@@ -12,8 +12,9 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go-version }}
-      - name: "Run tests"
+      - name: "Fetch repo"
         uses: actions/checkout@v3
+      - name: "Run tests"
         run: go test
   Deploy:
     runs-on: ubuntu-latest
