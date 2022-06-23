@@ -13,6 +13,7 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
       - name: "Run tests"
+        uses: actions/checkout@v3
         run: go test
   Deploy:
     runs-on: ubuntu-latest
