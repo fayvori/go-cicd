@@ -1,6 +1,5 @@
 on: push
 name: Go Web App Pipeline
-
 jobs:
   Test:
     strategy:
@@ -13,5 +12,7 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go-version }}
+      - name: "Fetch Repository"
+        uses: actions/checkout@v3    
       - name: "Run tests"
         run: go test
