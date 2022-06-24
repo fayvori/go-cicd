@@ -21,7 +21,8 @@ jobs:
     needs: Test
     steps:
       - name: "Deploy app to Heroku"
-        uses: akhileshns/heroku-deploy@v3.12.12
+        uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: "9c997b61-900c-462f-970b-c9fb28bae09d"
           heroku_app_name: "go-app-heroku-cicd-example"
